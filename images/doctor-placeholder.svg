@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Dentist illustration placeholder">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3efff"/><stop offset="1" stop-color="#d4f5f1"/></linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e8f1fb"/></linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#b)"/>
+  <circle cx="330" cy="90" r="120" fill="#22d3c5" opacity=".12"/><circle cx="60" cy="430" r="140" fill="#1d6fe8" opacity=".10"/>
+  <path d="M60 500c0-92 58-150 140-150s140 58 140 150z" fill="url(#c)" stroke="#c9dcf2" stroke-width="3"/>
+  <path d="M150 352l50 78 50-78" fill="none" stroke="#1d6fe8" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M170 350l30 40 30-40z" fill="#12b8aa" opacity=".9"/>
+  <rect x="178" y="300" width="44" height="60" rx="20" fill="#f1c9a5"/>
+  <ellipse cx="200" cy="245" rx="62" ry="72" fill="#f6d5b6"/>
+  <path d="M138 232c-6-62 36-92 74-86 38 6 60 38 50 88-14-30-40-44-68-44-24 0-44 12-56 42z" fill="#233b5d"/>
+  <path d="M176 270c10 14 38 14 48 0" fill="none" stroke="#b9805a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="177" cy="244" r="5" fill="#233b5d"/><circle cx="223" cy="244" r="5" fill="#233b5d"/>
+  <rect x="150" y="432" width="38" height="46" rx="6" fill="#12b8aa" opacity=".18"/>
+  <text x="200" y="488" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1553b8">Doctor photo coming soon</text>
+</svg>

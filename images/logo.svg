@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Dhritvi Advanced Dental Care logo">
+  <defs>
+    <linearGradient id="lg-bg" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#1d6fe8"/><stop offset="1" stop-color="#0fb5a8"/></linearGradient>
+    <linearGradient id="lg-tooth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dbeefc"/></linearGradient>
+    <radialGradient id="lg-shine" cx="0.3" cy="0.15" r="0.9"><stop offset="0" stop-color="#ffffff" stop-opacity=".38"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#lg-bg)"/>
+  <circle cx="32" cy="32" r="31" fill="url(#lg-shine)"/>
+  <circle cx="32" cy="32" r="27.2" fill="none" stroke="#ffffff" stroke-opacity=".45" stroke-width="1.3"/>
+  <!-- tooth -->
+  <path d="M32 14.2c-2.7-2-9.6-2.6-11.2 3.6-.9 3.6.9 6.6 1.8 10.4.9 3.9 1.1 9.4 3.2 9.4 1.8 0 1.7-5.2 3-8.2.5-1.1 1.2-1.7 2.2-1.7s1.7.6 2.2 1.7c1.3 3 1.2 8.2 3 8.2 2.1 0 2.3-5.5 3.2-9.4.9-3.8 2.7-6.8 1.8-10.4-1.6-6.2-8.5-5.6-11.2-3.6z" fill="url(#lg-tooth)"/>
+  <path d="M24.6 19.5c.9-2.1 2.9-2.9 4.8-2.3" fill="none" stroke="#1d6fe8" stroke-opacity=".28" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- smile -->
+  <path d="M20.5 45.2c6.4 5.6 16.6 5.6 23 0" fill="none" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- sparkle -->
+  <path d="M47.5 14l1.2 3.3 3.3 1.2-3.3 1.2-1.2 3.3-1.2-3.3-3.3-1.2 3.3-1.2z" fill="#c8fff7"/>
+</svg>
