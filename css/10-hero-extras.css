@@ -1,0 +1,120 @@
+/* Hero graphics and badge */
+/* ===== HERO GRAPHICS + BADGE ===== */
+.hero { overflow: hidden; }
+
+.hero-glass-card { position: relative; z-index: 2; }
+
+.hero-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+
+.blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; }
+.blob-1 { width: 360px; height: 360px; background: #22d3c5; top: -120px; left: -90px; opacity: 0.35; }
+.blob-2 { width: 420px; height: 420px; background: #1d6fe8; bottom: -170px; right: -110px; opacity: 0.45; }
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.04));
+    animation: floaty 9s ease-in-out infinite;
+}
+.b1 { width: 26px; height: 26px; left: 12%; top: 18%; }
+.b2 { width: 14px; height: 14px; left: 20%; bottom: 22%; animation-delay: -3s; }
+.b3 { width: 20px; height: 20px; right: 16%; top: 14%; animation-delay: -5s; }
+.b4 { width: 12px; height: 12px; right: 24%; bottom: 16%; animation-delay: -7s; }
+
+.deco-tooth { position: absolute; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.28)); animation: floaty 7s ease-in-out infinite; }
+.deco-tooth svg { width: 100%; height: auto; display: block; }
+.deco-tooth-1 { width: 120px; left: 5%; bottom: 14%; transform: rotate(-14deg); opacity: 0.95; }
+.deco-tooth-2 { width: 76px; right: 7%; top: 14%; transform: rotate(12deg); opacity: 0.9; animation-delay: -2.5s; }
+
+.spark { position: absolute; color: #7ff0e6; animation: twinkle 3.2s ease-in-out infinite; }
+.sp1 { width: 22px; left: 22%; top: 12%; }
+.sp2 { width: 16px; right: 20%; bottom: 20%; color: #ffffff; animation-delay: -1.2s; }
+.sp3 { width: 12px; left: 9%; top: 52%; color: #ffffff; animation-delay: -2.2s; }
+
+.float-chip {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--secondary);
+    padding: 0.65rem 1rem 0.65rem 0.7rem;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    font-size: 0.8rem;
+    line-height: 1.25;
+    animation: floaty 8s ease-in-out infinite;
+}
+.float-chip i {
+    width: 38px; height: 38px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+}
+.float-chip strong { display: block; font-size: 0.88rem; color: var(--secondary); }
+.float-chip span { color: var(--text-muted); }
+.chip-1 { left: 2%; top: 16%; }
+.chip-2 { right: 2%; bottom: 13%; animation-delay: -4s; }
+
+@keyframes floaty {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -14px; }
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.25; scale: 0.8; }
+    50% { opacity: 1; scale: 1.15; }
+}
+
+/* Badge: icon circle + text + live dot */
+.hero-badge {
+    gap: 10px;
+    padding: 0.35rem 1rem 0.35rem 0.4rem;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #eafffb;
+    backdrop-filter: blur(8px);
+}
+.badge-icon {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+}
+.badge-dot {
+    width: 9px; height: 9px; border-radius: 50%; background: #4ade80;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+    70% { box-shadow: 0 0 0 9px rgba(74, 222, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+.hero-points {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.6rem;
+    margin-top: 2rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    color: #e2ecf8;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+.hero-points i { color: #5eead4; margin-right: 6px; }
+
+/* Hide the big floating graphics on smaller screens so the text stays clear */
+@media (max-width: 1150px) {
+    .float-chip, .deco-tooth-1 { display: none; }
+    .deco-tooth-2 { width: 56px; right: 4%; top: 7%; }
+}
+@media (max-width: 650px) {
+    .deco-tooth-2, .sp3, .b1, .b3 { display: none; }
+    .hero-points { flex-direction: column; align-items: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .bubble, .deco-tooth, .spark, .float-chip, .badge-dot { animation: none; }
+}
+

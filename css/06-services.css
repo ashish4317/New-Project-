@@ -1,0 +1,137 @@
+/* Services filter and cards */
+/* ===== SERVICES (filter tabs + accent-strip cards) ===== */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+    background: white;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.6rem 1.3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+.filter-btn.active {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+    box-shadow: 0 6px 16px rgba(11, 31, 58, 0.25);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.8rem;
+    margin-bottom: 5rem;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeUp 0.45s ease both;
+}
+
+/* each category gets its own accent color */
+.service-card[data-cat="Preventive"]   { border-top-color: var(--primary); }
+.service-card[data-cat="Hygiene"]      { border-top-color: var(--accent); }
+.service-card[data-cat="Therapy"]      { border-top-color: #123a73; }
+.service-card[data-cat="Cosmetic"]     { border-top-color: var(--cta); }
+.service-card[data-cat="Restorative"]  { border-top-color: #0ea5a0; }
+.service-card[data-cat="Orthodontics"] { border-top-color: #3b8bff; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+
+.service-header-icon { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; }
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon { transform: scale(1.1); background: var(--secondary); color: white; }
+
+.service-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: var(--bg-main);
+    color: var(--secondary);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.service-card h3 { color: var(--secondary); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.6rem; }
+.service-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+.service-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.service-meta i { color: var(--accent-dark); margin-right: 4px; }
+
+.service-book-btn {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border: none;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.service-book-btn i { transition: transform 0.3s ease; }
+
+.service-book-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 6px 16px rgba(29, 111, 232, 0.35);
+}
+
+.service-book-btn:hover i { transform: translateX(5px); }
+

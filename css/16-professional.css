@@ -1,0 +1,172 @@
+/* Professional polish: consistent type, logo, sticky header, forms, cards (blue + white + teal) */
+
+/* ---- Consistent fonts and headings (one font family: Plus Jakarta Sans) ---- */
+body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+h1, h2, h3, h4 { color: var(--secondary); line-height: 1.2; letter-spacing: -0.4px; font-weight: 800; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+h3 { font-size: 1.2rem; font-weight: 700; }
+h4 { font-size: 1rem; font-weight: 700; }
+.section-title, .why-intro h2, .booking-info h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -0.4px; }
+.booking-info h2 { color: #fff; }
+.why-intro h2 { text-shadow: none; }
+.section-subtitle { letter-spacing: 1.2px; }
+
+/* ---- Accessibility helpers ---- */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important; height: 1px !important;
+    padding: 0 !important; margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    display: block !important;
+}
+.skip-link {
+    position: absolute;
+    left: 1rem; top: -60px;
+    z-index: 3000;
+    background: var(--secondary);
+    color: #fff;
+    padding: 0.7rem 1.1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+.skip-link:focus { top: 0.8rem; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---- Sticky header + professional logo ---- */
+.site-header { position: sticky; top: 0; z-index: 1000; transition: box-shadow 0.3s ease, background 0.3s ease; }
+.site-header.scrolled { box-shadow: 0 8px 24px rgba(11, 31, 58, 0.12); background: rgba(255, 255, 255, 0.97); }
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+.brand-logo-img { width: 50px; height: 50px; border-radius: 50%; display: block; box-shadow: 0 6px 16px rgba(21, 88, 200, 0.35); transition: transform 0.3s ease; }
+.brand:hover .brand-logo-img { transform: rotate(-6deg) scale(1.05); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap; }
+.brand-name { font-size: 1.55rem; font-weight: 800; color: var(--secondary); letter-spacing: 0.5px; line-height: 1; }
+.brand-sub { font-size: 0.64rem; font-weight: 700; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 2.2px; margin-top: 5px; }
+.brand-light .brand-name { color: #fff; }
+.brand-light .brand-sub { color: var(--accent); }
+
+/* ---- Buttons: blue + teal ---- */
+.nav-cta, .btn-primary, .submit-btn { background: linear-gradient(135deg, var(--cta), var(--cta-dark)); }
+
+/* ---- Cards: rounded corners + subtle shadows ---- */
+.service-card, .review-card, .faq-item, .doctor-facts li, .contact-section, .faq-section, .reviews-section, .stats-banner, .hv-card {
+    border-radius: var(--radius-lg);
+}
+.service-card, .review-card, .doctor-facts li { box-shadow: var(--shadow-sm); }
+.contact-section, .faq-section, .reviews-section { box-shadow: var(--shadow-sm); }
+.service-card:hover, .review-card:hover { box-shadow: var(--shadow-md); }
+.booking-section { border-radius: 26px; }
+
+/* ---- Form: labels, helpers, required marks ---- */
+fieldset { border: 0; min-width: 0; padding: 0; margin: 0; }
+.form-group legend, .form-group > label {
+    display: block;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 0.88rem;
+}
+.req { color: #d93f4c; font-weight: 800; }
+.form-required-note { font-size: 0.8rem; color: var(--text-muted); margin: -0.6rem 0 1.2rem 0; }
+.field-help { display: block; margin-top: 0.4rem; font-size: 0.78rem; color: var(--text-muted); }
+
+.form-group input:user-invalid, .form-group select:user-invalid, .form-group textarea:user-invalid { border-color: #d93f4c; background: #fff7f7; }
+.form-group input:user-valid:not(:placeholder-shown) { border-color: #12b8aa; }
+
+/* radio groups: visually hidden input, styled label (keyboard + screen reader friendly) */
+.patient-type input:checked + span { border-color: var(--primary); background: var(--primary-light); color: var(--primary-dark); }
+.patient-type input:focus-visible + span, .time-slots input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.time-slots .slot-btn {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+    cursor: pointer;
+}
+.time-slots .slot-btn span {
+    display: block;
+    padding: 0.8rem 0.5rem;
+    min-height: 48px;
+    background: #f7faff;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+.time-slots .slot-btn:hover span { border-color: var(--primary); color: var(--primary-dark); background: var(--primary-light); }
+.time-slots .slot-btn input:checked + span {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(29, 111, 232, 0.35);
+}
+
+/* review form + star rating */
+.review-form {
+    background: var(--bg-main);
+    padding: 1.8rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2.5rem;
+}
+.review-form h3 { margin-bottom: 1rem; }
+.review-form .form-group { margin-bottom: 1rem; }
+.review-form input[type="text"], .review-form textarea { padding-left: 1rem; }
+.review-form textarea { min-height: 90px; }
+.star-rating { display: inline-flex; flex-direction: row-reverse; gap: 6px; margin-top: 0.2rem; }
+.star-rating label { display: inline-block; min-width: 1.6rem; min-height: 1.6rem; text-align: center; margin: 0 !important; font-size: 1.6rem; color: #cbd5e1; cursor: pointer; line-height: 1; transition: color 0.15s ease, transform 0.15s ease; }
+.star-rating input:checked + label,
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label { color: #f5b83d; }
+.star-rating label:hover { transform: scale(1.15); }
+.star-rating input:focus-visible + label { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* ---- Doctor photo is now a real image ---- */
+img.doctor-photo { display: block; object-fit: cover; height: auto; }
+
+/* ---- Contact block is an <address>: no italics ---- */
+address.contact-details { font-style: normal; }
+
+@media (max-width: 1200px) { .brand-name { font-size: 1.4rem; } }
+@media (max-width: 650px) {
+    .brand-logo-img { width: 42px; height: 42px; }
+    .brand-name { font-size: 1.25rem; }
+    .brand-sub { font-size: 0.58rem; letter-spacing: 1.6px; margin-top: 4px; }
+    .review-form { padding: 1.2rem; }
+}
+
+/* ===== Hero treatment chips ===== */
+.hero-visual { position: relative; }
+.hv-chip { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: #fff; color: var(--secondary); border-radius: 999px; font-size: .82rem; font-weight: 700; box-shadow: 0 8px 22px rgba(11,31,58,.22); white-space: nowrap; }
+.hv-chip i { color: var(--accent-dark, #0a857f); }
+.hv-chip-1 { top: 8%; left: -4%; }
+.hv-chip-2 { top: 26%; right: -4%; }
+.hv-chip-3 { bottom: 30%; left: -6%; }
+.hv-chip-4 { bottom: 16%; right: 8%; }
+@media (max-width: 760px) { .hv-chip-3, .hv-chip-4 { display: none; } .hv-chip { font-size: .75rem; padding: 6px 11px; } .hv-chip-1 { left: 0; } .hv-chip-2 { right: 0; } }
+
+/* ===== Booking confirmation ===== */
+.confirm-title { font-size: 1.1rem; font-weight: 800; margin: 0 0 6px; color: #066b66; }
+.confirm-sub { margin: 0 0 14px; color: var(--secondary); font-size: .95rem; line-height: 1.55; }
+.confirm-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.confirm-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: .9rem; text-decoration: none; color: #fff; }
+.confirm-wa { background: #1fa855; }
+.confirm-cal { background: var(--primary); }
+.confirm-btn:hover { filter: brightness(1.08); }
+.confirm-actions { justify-content: center; }

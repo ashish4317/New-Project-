@@ -1,0 +1,40 @@
+/* Phone comfort: bigger tap targets, no zoom on inputs, lighter effects (keep last) */
+html { scroll-padding-top: 78px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; }
+a, button, label, summary { touch-action: manipulation; }
+
+@media (max-width: 960px) {
+    .float-actions { bottom: calc(16px + env(safe-area-inset-bottom)); right: calc(14px + env(safe-area-inset-right)); }
+}
+
+@media (max-width: 650px) {
+    /* 16px inputs stop iPhones from zooming in when you tap a field */
+    .form-group input, .form-group select, .form-group textarea { font-size: 16px; min-height: 50px; }
+    .form-group textarea { min-height: 110px; }
+    .slot-btn { min-height: 48px; font-size: 0.92rem; }
+    .filter-btn { min-height: 44px; }
+    .service-book-btn, .submit-btn, .btn-primary, .btn-secondary { min-height: 50px; }
+    .faq-item summary { padding-top: 1.2rem; padding-bottom: 1.2rem; }
+    .patient-type span { min-height: 50px; }
+
+    /* hero fills the first screen on a phone */
+    .hero { min-height: calc(100svh - 64px); padding-top: 2.5rem; padding-bottom: 6rem; }
+    .hero-glass-card { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+    /* lighter effects = smoother scrolling and less battery use */
+    .blob, .bubble { display: none; }
+    .why-3d-bg .ring-2 { display: none; }
+
+    /* leave room so floating buttons never cover the footer text */
+    .site-footer { padding-bottom: 5.5rem; }
+    .booking-form-wrap, .booking-info { padding: 1.6rem 1.1rem; }
+    .reviews-section, .faq-section, .contact-section { padding: 1.6rem 1rem; }
+    .container { padding: 0 0.9rem; }
+}
+
+/* ===== Calm home page: no decorative animation, readable text over the video ===== */
+.hero *, .hero *::before, .hero *::after, .stats-banner * { animation: none !important; }
+.hero h1, .hero-lead, .hero-badge, .hero-points li { text-shadow: 0 2px 12px rgba(5, 15, 30, 0.55); }
+@media (max-width: 760px) {
+    .hero-media::after { background: linear-gradient(180deg, rgba(11, 31, 58, 0.5), rgba(11, 31, 58, 0.4)); }
+}

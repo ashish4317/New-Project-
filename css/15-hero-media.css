@@ -1,0 +1,47 @@
+/* Home hero: dental background photo + optional background video */
+.hero { overflow: hidden; background: #0b1f3a; }
+
+.hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+
+/* photo layer (slow zoom): online dental photo, then the built-in illustration if it cannot load */
+.hero-poster {
+    position: absolute;
+    inset: 0;
+    background:
+        url('../images/hero-poster.jpg') center / cover no-repeat,
+        url('../images/hero-fallback.svg') center / cover no-repeat;
+}
+
+/* video layer fades in only once it is really playing */
+.hero-media video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+.hero-media video.playing { opacity: 1; }
+
+/* dark blue tint so the white text is always easy to read */
+.hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* light tint: the video stays clearly visible, text stays readable */
+    background: linear-gradient(90deg, rgba(11, 31, 58, 0.62) 0%, rgba(11, 31, 58, 0.32) 55%, rgba(11, 31, 58, 0.12) 100%);
+}
+
+/* smaller photo on phones = faster load */
+@media (max-width: 650px) {
+    .hero-poster {
+        background:
+                url('../images/hero-poster.jpg') center / cover no-repeat,
+        url('../images/hero-fallback.svg') center / cover no-repeat;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-poster { animation: none; }
+    .hero-media video { display: none; }
+}

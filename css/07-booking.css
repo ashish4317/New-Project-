@@ -1,0 +1,233 @@
+/* Booking section and form */
+/* ===== BOOKING (split: dark info panel + form) ===== */
+.booking-section {
+    display: grid;
+    grid-template-columns: 0.85fr 1.5fr;
+    background: white;
+    border-radius: 26px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+
+.booking-info {
+    background: linear-gradient(160deg, var(--secondary) 0%, #123a73 100%);
+    color: #d6e4f5;
+    padding: 3rem 2.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-info::after {
+    content: '';
+    position: absolute;
+    width: 260px; height: 260px;
+    right: -90px; bottom: -90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34, 211, 197, 0.35), transparent 70%);
+}
+
+.booking-info .section-subtitle { color: var(--accent); }
+.booking-info h2 { color: white; font-size: 1.9rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.8rem; }
+.booking-info > p { font-size: 0.95rem; margin-bottom: 2rem; color: #b5c8de; }
+
+.booking-steps { list-style: none; margin-bottom: 2rem; position: relative; z-index: 1; }
+
+.booking-steps li { display: flex; gap: 14px; margin-bottom: 1.2rem; align-items: flex-start; }
+
+.step-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(34, 211, 197, 0.18);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.booking-steps strong { display: block; color: white; font-size: 0.95rem; }
+.booking-steps span { font-size: 0.85rem; color: #9fb6d0; }
+
+.booking-contact {
+    position: relative;
+    z-index: 1;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.9rem;
+}
+
+.booking-contact div { margin-bottom: 0.6rem; display: flex; gap: 10px; align-items: center; }
+.booking-contact i { color: var(--accent); width: 18px; }
+
+.booking-form-wrap { padding: 3rem 2.8rem; }
+.booking-form-wrap h3 { color: var(--secondary); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.3rem; }
+.booking-form-wrap .form-intro { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.8rem; }
+
+.form-group { margin-bottom: 1.4rem; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 0.88rem;
+}
+
+.input-wrapper { position: relative; }
+
+.input-wrapper i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 2.8rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--secondary);
+    background-color: #f7faff;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(29, 111, 232, 0.12);
+}
+
+.form-row { display: flex; gap: 1.4rem; }
+.form-row .form-group { flex: 1; }
+
+/* patient type toggle */
+.patient-type { display: flex; gap: 10px; }
+
+.patient-type label {
+    flex: 1;
+    margin: 0;
+    cursor: pointer;
+}
+
+.patient-type input { display: none; }
+
+.patient-type span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.8rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    background: #f7faff;
+    transition: all 0.2s ease;
+}
+
+.patient-type input:checked + span {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.slot-label { display: flex; justify-content: space-between; align-items: center; }
+.slot-subtitle { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+
+.slot-group-title {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin: 0.9rem 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slot-group-title i { color: var(--cta); }
+
+.time-slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+
+.slot-btn {
+    padding: 0.75rem 0.5rem;
+    background-color: #f7faff;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.slot-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.slot-btn.selected {
+    background-color: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(29, 111, 232, 0.35);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.1rem;
+    background: linear-gradient(135deg, var(--cta), var(--cta-dark));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 14px 28px -8px rgba(10, 133, 127, 0.55);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover { transform: translateY(-3px); box-shadow: 0 22px 34px -10px rgba(10, 133, 127, 0.6); }
+
+.form-note { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.9rem; }
+.form-note i { color: var(--accent-dark); }
+
+.confirmation-message {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background-color: #ecfdf8;
+    color: #0b6b5c;
+    border: 1px solid #a7ecdc;
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 700;
+}
+
