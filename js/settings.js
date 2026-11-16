@@ -6,7 +6,7 @@
                      (example: 919876543210, no + or spaces)
    CLINIC_PHONE    : clinic phone for the Call buttons, same format
    ===================================================================== */
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwMscpGcID8yHGjd-_4n_7hDwdmL6GgJJ87Clk5WQ-j-tt8b-VMumczcNWQxi6xD2NS6Q/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwMscpGcID8yHGjd-_4n_7hDwdmL6GgJJ87Clk5WQ-j-tt8b-VMumczcNWQxi6xD2NS6Q/exec'';
 const WHATSAPP_NUMBER = '919872867433';
 const CLINIC_PHONE = '919872867433';
 
