@@ -654,7 +654,9 @@
                         <textarea id="reviewComment" name="reviewComment" rows="3" minlength="10" maxlength="400"
                             placeholder="Tell us about your treatment and care quality..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Submit Review</button>
+                    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                     <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Submit Review</button>
+                        <p id="reviewNote" class="review-note" role="status" aria-live="polite"></p>
                 </form>
 
                 <div id="reviewsContainer" class="reviews-grid">
